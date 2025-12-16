@@ -21,8 +21,14 @@ export type PresetCategory =
 
 /**
  * Status of a preset submission in the moderation workflow
+ *
+ * - `pending`: Awaiting moderation review
+ * - `approved`: Approved and visible in listings
+ * - `rejected`: Rejected by moderator
+ * - `flagged`: Auto-flagged by content moderation
+ * - `hidden`: Hidden due to user ban (restored on unban)
  */
-export type PresetStatus = 'pending' | 'approved' | 'rejected' | 'flagged';
+export type PresetStatus = 'pending' | 'approved' | 'rejected' | 'flagged' | 'hidden';
 
 /**
  * Sort options for preset listings
