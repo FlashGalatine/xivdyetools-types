@@ -96,7 +96,7 @@ describe('createHexColor', () => {
 });
 
 describe('createDyeId', () => {
-  describe('valid inputs', () => {
+  describe('valid regular IDs (1-200)', () => {
     it('should accept valid dye IDs (1-200)', () => {
       expect(createDyeId(1)).toBe(1);
       expect(createDyeId(100)).toBe(100);
@@ -109,14 +109,35 @@ describe('createDyeId', () => {
     });
   });
 
+  // TYPES-102: Synthetic IDs for Facewear dyes
+  describe('valid synthetic IDs (<= -1000)', () => {
+    it('should accept synthetic Facewear dye IDs', () => {
+      expect(createDyeId(-1000)).toBe(-1000);
+      expect(createDyeId(-1500)).toBe(-1500);
+      expect(createDyeId(-2000)).toBe(-2000);
+    });
+
+    it('should accept boundary synthetic value (-1000)', () => {
+      expect(createDyeId(-1000)).toBe(-1000);
+    });
+
+    it('should accept very negative synthetic IDs', () => {
+      expect(createDyeId(-10000)).toBe(-10000);
+      expect(createDyeId(-999999)).toBe(-999999);
+    });
+  });
+
   describe('invalid inputs', () => {
     it('should return null for ID 0', () => {
       expect(createDyeId(0)).toBeNull();
     });
 
-    it('should return null for negative IDs', () => {
+    it('should return null for IDs in the gap between regular and synthetic ranges', () => {
+      // Gap: -999 to 0 (exclusive)
       expect(createDyeId(-1)).toBeNull();
       expect(createDyeId(-100)).toBeNull();
+      expect(createDyeId(-500)).toBeNull();
+      expect(createDyeId(-999)).toBeNull();
     });
 
     it('should return null for IDs above 200', () => {
@@ -129,6 +150,7 @@ describe('createDyeId', () => {
       expect(createDyeId(1.5)).toBeNull();
       expect(createDyeId(100.1)).toBeNull();
       expect(createDyeId(0.9)).toBeNull();
+      expect(createDyeId(-1000.5)).toBeNull();
     });
 
     it('should return null for NaN', () => {
@@ -142,16 +164,27 @@ describe('createDyeId', () => {
   });
 
   describe('edge cases', () => {
-    it('should handle exact boundary values', () => {
+    it('should handle exact boundary values for regular IDs', () => {
       expect(createDyeId(1)).toBe(1);
       expect(createDyeId(200)).toBe(200);
       expect(createDyeId(0)).toBeNull();
       expect(createDyeId(201)).toBeNull();
     });
 
+    it('should handle exact boundary values for synthetic IDs', () => {
+      expect(createDyeId(-1000)).toBe(-1000);
+      expect(createDyeId(-999)).toBeNull();
+    });
+
     it('should return the same numeric value when valid', () => {
       const result = createDyeId(42);
       expect(result).toBe(42);
+      expect(typeof result).toBe('number');
+    });
+
+    it('should return the same negative value for synthetic IDs', () => {
+      const result = createDyeId(-1500);
+      expect(result).toBe(-1500);
       expect(typeof result).toBe('number');
     });
   });
