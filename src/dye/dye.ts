@@ -3,6 +3,15 @@
  *
  * FFXIV dye object definitions with color and metadata.
  *
+ * ## TYPES-103: Field Presence Guarantee
+ *
+ * All fields in the `Dye` interface are required and non-nullable.
+ * The dye database (`xivdyetools-core`) ensures complete data initialization.
+ *
+ * **For consumers:** You can safely access all Dye fields without null checks.
+ * If you're receiving dye data from external sources (JSON APIs, user input),
+ * validate the data matches the interface before casting to `Dye`.
+ *
  * @module dye/dye
  */
 

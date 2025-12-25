@@ -5,6 +5,22 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.1] - 2025-12-24
+
+### Documentation
+
+- **TYPES-101**: Added documentation about branded types runtime validation limitation
+  - Clarified that TypeScript cannot enforce use of `create*` helper functions
+  - Added best practices guidance to avoid bypassing validation with type assertions
+  - Updated module header in `src/color/branded.ts`
+
+- **TYPES-103**: Added documentation about Dye field presence guarantee
+  - Clarified all Dye interface fields are required and non-nullable
+  - Added guidance for consumers about safe field access
+  - Updated module header in `src/dye/dye.ts`
+
+---
+
 ## [1.1.0] - 2025-12-24
 
 ### Added

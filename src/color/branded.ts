@@ -4,6 +4,23 @@
  * Branded types prevent accidental type confusion between similar types.
  * For example, a DyeId cannot be accidentally used where a plain number is expected.
  *
+ * ## TYPES-101: Runtime Validation Limitation
+ *
+ * **Important:** Branded types in TypeScript rely on runtime validation via helper
+ * functions. The type system cannot enforce that all values are created through
+ * these helpers. Developers can bypass validation using type assertions:
+ *
+ * ```typescript
+ * // UNSAFE: Bypasses validation
+ * const unsafeHex = "#invalid" as HexColor;
+ *
+ * // SAFE: Uses validation
+ * const safeHex = createHexColor("#FF0000");
+ * ```
+ *
+ * **Best Practice:** Always use the `create*` helper functions to ensure values
+ * are validated. Never use type assertions (`as HexColor`) to create branded values.
+ *
  * @module color/branded
  */
 
