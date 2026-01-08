@@ -1,6 +1,6 @@
 {
   "name": "@xivdyetools/types",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "description": "Shared TypeScript type definitions for the xivdyetools ecosystem",
   "author": "XIV Dye Tools",
   "license": "MIT",
@@ -19,6 +19,10 @@
     "./dye": {
       "types": "./dist/dye/index.d.ts",
       "import": "./dist/dye/index.js"
+    },
+    "./character": {
+      "types": "./dist/character/index.d.ts",
+      "import": "./dist/character/index.js"
     },
     "./preset": {
       "types": "./dist/preset/index.d.ts",

@@ -27,6 +27,25 @@ export type { VisionType, Matrix3x3, ColorblindMatrices } from './color/index.js
 export type { Dye, LocalizedDye, DyeWithDistance, DyeDatabase } from './dye/index.js';
 
 // ============================================================================
+// Character Color Types
+// ============================================================================
+export type {
+  CharacterColor,
+  CharacterColorMatch,
+  SharedColorCategory,
+  RaceSpecificColorCategory,
+  CharacterColorCategory,
+  SubRace,
+  Gender,
+  Race,
+} from './character/index.js';
+export {
+  RACE_SUBRACES,
+  SUBRACE_TO_RACE,
+  COLOR_GRID_DIMENSIONS,
+} from './character/index.js';
+
+// ============================================================================
 // Preset Types
 // ============================================================================
 export type {

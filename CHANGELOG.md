@@ -5,6 +5,23 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.3.0] - 2026-01-08
+
+### Added
+
+- **Character Color Types**: New `@xivdyetools/types/character` module for FFXIV character customization colors
+  - `CharacterColor` interface: Represents a single color option in the character creator
+  - `CharacterColorMatch` interface: Result from matching a character color to dyes
+  - `SubRace` type: All 16 playable subraces (Midlander, Highlander, Wildwood, etc.)
+  - `Gender` type: Character gender options ('Male' | 'Female')
+  - `Race` type: All 8 playable races
+  - `SharedColorCategory` / `RaceSpecificColorCategory` types for color palette categories
+  - `RACE_SUBRACES` constant: Mapping of races to their subraces
+  - `SUBRACE_TO_RACE` constant: Mapping of subraces to parent race
+  - `COLOR_GRID_DIMENSIONS` constant: Grid dimensions for color palettes
+
+---
+
 ## [1.2.0] - 2026-01-08
 
 ### Added
