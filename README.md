@@ -94,6 +94,7 @@ import { Dye, LocalizedDye, DyeWithDistance, DyeDatabase } from '@xivdyetools/ty
 // Full dye object
 const dye: Dye = {
   itemID: 5729,
+  stainID: 1,  // Game's internal stain table ID (null for Facewear dyes)
   id: 1,
   name: 'Snow White',
   hex: '#FFFFFF',

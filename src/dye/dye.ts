@@ -27,6 +27,22 @@ export interface Dye {
   /** FFXIV item ID */
   itemID: number;
 
+  /**
+   * Game's internal stain table ID (1-125).
+   *
+   * This is the ID used in the game's Stain Excel table and by plugins
+   * like Glamourer and Mare Synchronos. Unlike itemID, stainID may shift
+   * when new dyes are added to the game.
+   *
+   * **Note:** Facewear dyes do not have stainIDs (null).
+   *
+   * **Recommendation:** Use `itemID` for stable references. Use `stainID`
+   * only when interfacing with plugins or datamined content.
+   *
+   * @since 2.1.0
+   */
+  stainID: number | null;
+
   /** Unique dye ID (1-200) */
   id: number;
 
