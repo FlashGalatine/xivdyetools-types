@@ -5,6 +5,18 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.5.0] - 2026-01-11
+
+### Added
+
+- **Market Listing Source**: Added world identification fields to `PriceData` interface
+  - `worldId?: number` - World ID where the minimum price listing is from (Universalis worldId)
+  - `worldName?: string` - World name where the minimum price listing is from
+  - Enables displaying which specific world has the cheapest listing when fetching data center prices
+  - Can be mapped to world name using worlds.json data
+
+---
+
 ## [1.4.0] - 2026-01-11
 
 ### Added
