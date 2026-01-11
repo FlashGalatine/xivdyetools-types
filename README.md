@@ -40,7 +40,7 @@ For smaller bundle sizes, import from specific modules:
 
 ```typescript
 // Color types
-import { RGB, HSV, HexColor, createHexColor, VisionType } from '@xivdyetools/types/color';
+import { RGB, HSV, LAB, HexColor, createHexColor, VisionType } from '@xivdyetools/types/color';
 
 // Dye types
 import { Dye, LocalizedDye, DyeWithDistance, DyeDatabase } from '@xivdyetools/types/dye';
@@ -73,9 +73,13 @@ import { LocaleCode, LocaleData, TranslationKey } from '@xivdyetools/types/local
 ```typescript
 import { RGB, HSV, HexColor, createHexColor, DyeId, createDyeId } from '@xivdyetools/types';
 
-// RGB and HSV interfaces
+// RGB, HSV, and LAB interfaces
 const red: RGB = { r: 255, g: 0, b: 0 };
 const redHsv: HSV = { h: 0, s: 100, v: 100 };
+
+// LAB color space (for perceptual color matching)
+import { LAB } from '@xivdyetools/types';
+const redLab: LAB = { L: 53.23, a: 80.11, b: 67.22 };
 
 // Branded types with validation
 const hex: HexColor = createHexColor('#ff6b6b'); // Validates and normalizes to "#FF6B6B"

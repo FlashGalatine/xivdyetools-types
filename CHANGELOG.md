@@ -5,6 +5,19 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.4.0] - 2026-01-11
+
+### Added
+
+- **LAB Color Type**: New `LAB` interface for CIE LAB perceptually uniform color space
+  - `L`: Lightness (0-100)
+  - `a`: Green-Red axis (approximately -128 to 127)
+  - `b`: Blue-Yellow axis (approximately -128 to 127)
+  - Enables DeltaE color difference calculations in `@xivdyetools/core`
+  - Used for perceptually accurate color matching in harmony generation
+
+---
+
 ## [1.3.0] - 2026-01-08
 
 ### Added

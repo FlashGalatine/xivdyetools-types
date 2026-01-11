@@ -31,3 +31,17 @@ export interface HSV {
   /** Value/Brightness (0-100 percent) */
   v: number;
 }
+
+/**
+ * CIE LAB color representation (perceptually uniform color space)
+ * Used for DeltaE color difference calculations
+ * @example { L: 53.23, a: 80.11, b: 67.22 } // Red
+ */
+export interface LAB {
+  /** Lightness (0-100) */
+  L: number;
+  /** Green-Red axis (approximately -128 to 127) */
+  a: number;
+  /** Blue-Yellow axis (approximately -128 to 127) */
+  b: number;
+}

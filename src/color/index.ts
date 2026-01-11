@@ -7,7 +7,7 @@
  */
 
 // Core color types
-export type { RGB, HSV } from './rgb.js';
+export type { RGB, HSV, LAB } from './rgb.js';
 
 // Branded types for type safety
 export type { HexColor, DyeId, Hue, Saturation } from './branded.js';
