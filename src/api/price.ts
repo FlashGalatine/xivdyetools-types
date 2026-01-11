@@ -26,6 +26,20 @@ export interface PriceData {
 
   /** Last update timestamp (ms since epoch) */
   lastUpdate: number;
+
+  /**
+   * World ID where the min price listing is from (Universalis worldId).
+   * Can be mapped to world name using worlds.json data.
+   * @since 1.5.0
+   */
+  worldId?: number;
+
+  /**
+   * World name where the min price listing is from.
+   * Resolved from worldId when available.
+   * @since 1.5.0
+   */
+  worldName?: string;
 }
 
 /**
