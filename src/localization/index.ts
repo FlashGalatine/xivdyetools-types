@@ -72,6 +72,41 @@ export type JobKey =
 export type GrandCompanyKey = 'maelstrom' | 'twinAdder' | 'immortalFlames';
 
 /**
+ * FFXIV Playable Race keys for localization
+ */
+export type RaceKey =
+  | 'hyur'
+  | 'elezen'
+  | 'lalafell'
+  | 'miqote'
+  | 'roegadyn'
+  | 'auRa'
+  | 'hrothgar'
+  | 'viera';
+
+/**
+ * FFXIV Clan (Subrace) keys for localization
+ * Uses camelCase keys that map to SubRace type values
+ */
+export type ClanKey =
+  | 'midlander'
+  | 'highlander'
+  | 'wildwood'
+  | 'duskwight'
+  | 'plainsfolk'
+  | 'dunesfolk'
+  | 'seekerOfTheSun'
+  | 'keeperOfTheMoon'
+  | 'seaWolf'
+  | 'hellsguard'
+  | 'raen'
+  | 'xaela'
+  | 'helion'
+  | 'theLost'
+  | 'rava'
+  | 'veena';
+
+/**
  * Locale data structure matching generated JSON files
  */
 export interface LocaleData {
@@ -114,6 +149,12 @@ export interface LocaleData {
 
   /** Grand Company name translations */
   grandCompanyNames: Record<GrandCompanyKey, string>;
+
+  /** Playable race name translations */
+  races: Record<RaceKey, string>;
+
+  /** Clan (subrace) name translations */
+  clans: Record<ClanKey, string>;
 }
 
 /**
