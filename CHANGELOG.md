@@ -5,6 +5,36 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.6.0] - 2026-01-17
+
+### Added
+
+- **OKLAB Color Type**: Modern perceptually uniform color space (Björn Ottosson, 2020)
+  - `L`: Perceived lightness (0 to 1)
+  - `a`: Green-Red axis (approximately -0.4 to 0.4)
+  - `b`: Blue-Yellow axis (approximately -0.4 to 0.4)
+  - Fixes CIELAB's blue color distortion for better color mixing
+
+- **OKLCH Color Type**: Cylindrical form of OKLAB
+  - `L`: Perceived lightness (0 to 1)
+  - `C`: Chroma - colorfulness (0 to ~0.4)
+  - `h`: Hue angle (0-360 degrees)
+  - Ideal for gradient interpolation and hue-based operations
+
+- **LCH Color Type**: Cylindrical form of CIE LAB
+  - `L`: Lightness (0-100)
+  - `C`: Chroma - colorfulness (0 to ~150)
+  - `h`: Hue angle (0-360 degrees)
+  - Useful for hue-based interpolation with direction control
+
+- **HSL Color Type**: Hue-Saturation-Lightness
+  - `h`: Hue (0-360 degrees)
+  - `s`: Saturation (0-100 percent)
+  - `l`: Lightness (0-100 percent)
+  - Common in design tools (Photoshop, Figma, CSS)
+
+---
+
 ## [1.5.0] - 2026-01-11
 
 ### Added
