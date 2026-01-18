@@ -17,6 +17,11 @@ npm run test:coverage  # Run tests with coverage (80% threshold)
 npm run clean          # Remove dist/
 ```
 
+### Pre-commit Checklist
+```bash
+npm run test -- --run && npm run build
+```
+
 ## Architecture
 
 ### Module Structure
@@ -56,3 +61,17 @@ Type guards `isOk()` and `isErr()` narrow the result type.
 ## Testing
 
 Tests use Vitest with globals enabled. Test files are colocated with source files using `.test.ts` suffix. Coverage excludes index re-export files.
+
+## Related Projects
+
+**Dependents (all ecosystem projects):**
+- `@xivdyetools/core` - Core algorithms
+- `@xivdyetools/logger` - Logging library
+- `@xivdyetools/test-utils` - Test utilities
+- xivdyetools-web-app - Web application
+- xivdyetools-discord-worker - Discord bot
+- xivdyetools-presets-api - Presets REST API
+- xivdyetools-oauth - OAuth worker
+- xivdyetools-moderation-worker - Moderation bot
+
+Changes to types require npm publish before dependents can use them.
