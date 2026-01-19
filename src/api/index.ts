@@ -6,6 +6,6 @@
  * @module api
  */
 
-export type { APIResponse, CachedData } from './response.js';
+export type { APISuccessResponse, APIErrorResponse, APIResponse, CachedData } from './response.js';
 export type { ModerationResult, ModerationLogEntry, ModerationStats } from './moderation.js';
 export type { PriceData, RateLimitResult } from './price.js';

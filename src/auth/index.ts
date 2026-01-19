@@ -27,7 +27,14 @@ export type {
 // Response types
 export type {
   AuthUser,
+  AuthSuccessResponse,
+  AuthErrorResponse,
   AuthResponse,
+  RefreshSuccessResponse,
+  RefreshErrorResponse,
   RefreshResponse,
+  UserInfoData,
+  UserInfoSuccessResponse,
+  UserInfoErrorResponse,
   UserInfoResponse,
 } from './response.js';

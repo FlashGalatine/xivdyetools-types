@@ -31,9 +31,20 @@ export type { PresetFilters, PresetEditRequest } from './request.js';
 // Response types
 export type {
   PresetListResponse,
+  PresetSubmitCreatedResponse,
+  PresetSubmitDuplicateResponse,
+  PresetSubmitErrorResponse,
   PresetSubmitResponse,
+  PresetEditDuplicateInfo,
+  PresetEditSuccessResponse,
+  PresetEditDuplicateResponse,
+  PresetEditErrorResponse,
   PresetEditResponse,
+  VoteSuccessResponse,
+  VoteErrorResponse,
   VoteResponse,
+  ModerationSuccessResponse,
+  ModerationErrorResponse,
   ModerationResponse,
   CategoryListResponse,
 } from './response.js';

@@ -63,9 +63,20 @@ export type {
   PresetFilters,
   PresetEditRequest,
   PresetListResponse,
+  PresetSubmitCreatedResponse,
+  PresetSubmitDuplicateResponse,
+  PresetSubmitErrorResponse,
   PresetSubmitResponse,
+  PresetEditDuplicateInfo,
+  PresetEditSuccessResponse,
+  PresetEditDuplicateResponse,
+  PresetEditErrorResponse,
   PresetEditResponse,
+  VoteSuccessResponse,
+  VoteErrorResponse,
   VoteResponse,
+  ModerationSuccessResponse,
+  ModerationErrorResponse,
   ModerationResponse,
   CategoryListResponse,
 } from './preset/index.js';
@@ -88,8 +99,15 @@ export type {
   XIVAuthSocialIdentity,
   XIVAuthUser,
   AuthUser,
+  AuthSuccessResponse,
+  AuthErrorResponse,
   AuthResponse,
+  RefreshSuccessResponse,
+  RefreshErrorResponse,
   RefreshResponse,
+  UserInfoData,
+  UserInfoSuccessResponse,
+  UserInfoErrorResponse,
   UserInfoResponse,
 } from './auth/index.js';
 
@@ -97,6 +115,8 @@ export type {
 // API Types
 // ============================================================================
 export type {
+  APISuccessResponse,
+  APIErrorResponse,
   APIResponse,
   CachedData,
   ModerationResult,

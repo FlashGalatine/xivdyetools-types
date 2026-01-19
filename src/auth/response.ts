@@ -36,58 +36,117 @@ export interface AuthUser {
 }
 
 /**
- * Response from authentication endpoints
+ * Successful authentication response
  */
-export interface AuthResponse {
-  /** Whether authentication succeeded */
-  success: boolean;
+export interface AuthSuccessResponse {
+  /** Authentication succeeded */
+  success: true;
 
-  /** JWT token (if successful) */
-  token?: string;
+  /** JWT token */
+  token: string;
 
-  /** User information (if successful) */
-  user?: AuthUser;
+  /** User information */
+  user: AuthUser;
 
   /** Token expiration timestamp (ms since epoch) */
-  expires_at?: number;
+  expires_at: number;
+}
 
-  /** Error message (if unsuccessful) */
-  error?: string;
+/**
+ * Failed authentication response
+ */
+export interface AuthErrorResponse {
+  /** Authentication failed */
+  success: false;
+
+  /** Error message describing the failure */
+  error: string;
+}
+
+/**
+ * Response from authentication endpoints
+ *
+ * Uses discriminated union for type-safe handling:
+ * ```typescript
+ * if (response.success) {
+ *   // TypeScript knows: token, user, expires_at exist
+ *   console.log(response.user.username);
+ * } else {
+ *   // TypeScript knows: error exists
+ *   console.error(response.error);
+ * }
+ * ```
+ */
+export type AuthResponse = AuthSuccessResponse | AuthErrorResponse;
+
+/**
+ * Successful token refresh response
+ */
+export interface RefreshSuccessResponse {
+  /** Refresh succeeded */
+  success: true;
+
+  /** New JWT token */
+  token: string;
+
+  /** New token expiration timestamp (ms since epoch) */
+  expires_at: number;
+}
+
+/**
+ * Failed token refresh response
+ */
+export interface RefreshErrorResponse {
+  /** Refresh failed */
+  success: false;
+
+  /** Error message describing the failure */
+  error: string;
 }
 
 /**
  * Response from token refresh endpoint
+ *
+ * Uses discriminated union for type-safe handling.
  */
-export interface RefreshResponse {
-  /** Whether refresh succeeded */
-  success: boolean;
+export type RefreshResponse = RefreshSuccessResponse | RefreshErrorResponse;
 
-  /** New JWT token (if successful) */
-  token?: string;
+/**
+ * User info data returned in UserInfoResponse
+ */
+export interface UserInfoData {
+  id: string;
+  username: string;
+  global_name: string | null;
+  avatar: string | null;
+  avatar_url: string | null;
+}
 
-  /** New token expiration timestamp */
-  expires_at?: number;
+/**
+ * Successful user info response
+ */
+export interface UserInfoSuccessResponse {
+  /** Request succeeded */
+  success: true;
 
-  /** Error message (if unsuccessful) */
-  error?: string;
+  /** User information */
+  user: UserInfoData;
+}
+
+/**
+ * Failed user info response
+ */
+export interface UserInfoErrorResponse {
+  /** Request failed */
+  success: false;
+
+  /** Error message describing the failure */
+  error: string;
 }
 
 /**
  * Response from user info endpoint
+ *
+ * Uses discriminated union for type-safe handling.
  */
-export interface UserInfoResponse {
-  /** Whether request succeeded */
-  success: boolean;
-
-  /** User information (if successful) */
-  user?: {
-    id: string;
-    username: string;
-    global_name: string | null;
-    avatar: string | null;
-    avatar_url: string | null;
-  };
-
-  /** Error message (if unsuccessful) */
-  error?: string;
-}
+export type UserInfoResponse = UserInfoSuccessResponse | UserInfoErrorResponse;
