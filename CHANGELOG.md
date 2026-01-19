@@ -5,6 +5,18 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.7.0] - 2026-01-19
+
+### Changed
+
+- **TYPES-REF-002**: Implemented discriminated unions for all response types using `success: true` / `success: false` literal types for proper TypeScript type narrowing
+  - `AuthResponse`, `RefreshResponse`, `UserInfoResponse` - Auth module responses
+  - `APIResponse<T>` - Generic API wrapper
+  - `PresetSubmitResponse`, `PresetEditResponse`, `VoteResponse`, `ModerationResponse` - Preset module responses
+  - Consumers now get full type safety with `if (response.success)` narrowing
+
+---
+
 ## [1.6.0] - 2026-01-17
 
 ### Added
