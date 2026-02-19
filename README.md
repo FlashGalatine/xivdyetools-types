@@ -1,3 +1,5 @@
+# NOTICE! This repo has been DEPRECATED! For the latest updates to the XIV Dye Tools app, see the mono-repo here: https://github.com/FlashGalatine/xivdyetools
+
 # @xivdyetools/types
 
 Shared TypeScript type definitions for the xivdyetools ecosystem.
